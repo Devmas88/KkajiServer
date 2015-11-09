@@ -1,0 +1,1 @@
+Kkaji('ROLE').USER = 'USER';
