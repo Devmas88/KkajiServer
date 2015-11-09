@@ -1,4 +1,4 @@
-Kkaji.AdModel = OBJECT({
+Kkaji.EventModel = OBJECT({
 
 	preset : function() {
 		'use strict';
