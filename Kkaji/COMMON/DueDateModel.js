@@ -12,6 +12,16 @@ Kkaji.DueDateModel = OBJECT({
 		var
 		// valid data set
 		validDataSet = {
+
+			userId : {
+				notEmpty : true,
+				id : true
+			},
+
+			category : {
+				notEmpty : true,
+				one : ['schedule', 'coupone', 'sale', 'trip', 'deadline', 'event', 'ect']
+			},
 			
 			title : {
 				notEmpty : true,
@@ -21,21 +31,54 @@ Kkaji.DueDateModel = OBJECT({
 			},
 			
 			content : {
-				notEmpty : true,
 				size : {
 					max : 10000
 				}
 			},
 
-			comment : {
-				name : {
-					size : {
-						max : 255
+			startDate : {
+				date : true
+			},
+
+			endDate : {
+				date : true
+			},
+
+			isPush : {
+				bool : true
+			},
+
+			files : {
+				array : true,
+				each : {
+					data : true,
+					detail : {
+						fileId : {
+							notEmpty : true,
+							id : true
+						},
+						fileName : {
+							notEmpty : true,
+							size : {
+								max : 1024
+							}
+						},
+						fileSize : {
+							notEmpty : true,
+							integer : true
+						},
+						fileType : {
+							size : {
+								max : 255
+							}
+						}
 					}
-				},
-				size : {
-					max : 1000
 				}
+			},
+
+			type : {
+				notEmpty : true,
+				one : ['interval', 'deadline']
 			}
 		};
 
