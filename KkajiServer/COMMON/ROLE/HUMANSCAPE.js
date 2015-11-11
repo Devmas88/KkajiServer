@@ -1,0 +1,1 @@
+KkajiServer('ROLE').HUMANSCAPE = 'HUMANSCAPE';
